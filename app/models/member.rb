@@ -1,6 +1,10 @@
 class Member < ApplicationRecord
   # Direct associations
 
+  has_many   :owners,
+             :foreign_key => "members_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
