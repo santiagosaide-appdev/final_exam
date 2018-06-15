@@ -33,7 +33,7 @@
           Members
         </label>
 
-        <input type="text" id="members_id" name="members_id" placeholder="Members" class="form-control" value="<%= @owner.members_id %>">
+        <%= select_tag(:members_id, options_from_collection_for_select(Member.all, :id, :email, @owner.members_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
