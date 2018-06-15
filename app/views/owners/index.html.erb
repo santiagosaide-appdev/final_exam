@@ -16,8 +16,20 @@
 
       <% @owners.each do |owner| %>
       <tr>
-        <td><%= owner.vessels.name %></td>
-        <td><%= owner.members.email %></td>
+        <td>
+          <% if owner.vessels.present? %>
+            <a href="/vessels/<%= owner.vessels.id %>">
+              <%= owner.vessels.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if owner.members.present? %>
+            <a href="/members/<%= owner.members.id %>">
+              <%= owner.members.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/owners/<%= owner.id %>" class="btn btn-primary">Show</a>
           
