@@ -1,6 +1,7 @@
 class VesselsController < ApplicationController
   def index
-    @vessels = Vessel.page(params[:page]).per(10)
+    @q = Vessel.ransack(params[:q])
+    @vessels = @q.result(:distinct => true).includes(:owners, :members).page(params[:page]).per(10)
 
     render("vessels/index.html.erb")
   end
