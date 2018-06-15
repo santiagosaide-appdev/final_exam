@@ -28,13 +28,7 @@
       </div>
 
       <!-- Label and input for members_id -->
-      <div class="form-group">
-        <label for="members_id" class="control-label">
-          Members
-        </label>
-
-        <%= select_tag(:members_id, options_from_collection_for_select(Member.all, :id, :email, @owner.members_id), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="members_id" value="<%= current_member.id %>">
 
       <button class="btn btn-success">
         Create Owner

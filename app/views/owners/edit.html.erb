@@ -27,14 +27,8 @@
         <%= select_tag(:vessels_id, options_from_collection_for_select(Vessel.all, :id, :name, @owner.vessels_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for members_id -->
-      <div class="form-group">
-        <label for="members_id" class="control-label">
-          Members
-        </label>
-
-        <%= select_tag(:members_id, options_from_collection_for_select(Member.all, :id, :email, @owner.members_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <button class="btn btn-warning">
         Update Owner
